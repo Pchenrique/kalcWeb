@@ -12,7 +12,6 @@ var operadorAntigo = "";
 var resultado = 0;
 var antigo = 0;
 var atual = 0;
-var temPonto = false;
 
 const screen = document.querySelector(".screen");
 
@@ -28,19 +27,21 @@ const reset = function(){
 	operando = 0;
 	operadorAntigo = "";
 	operadorAtual = "";
-	temPonto = false;
 	console.clear();
 }
 
 const apresentar = function(valor){
 	//console.log(operando);
+	if(valor == "." && screen.innerText.indexOf(valor) != -1 ){
+		return;
+	}
+
 	if(operando){
 		operando = false;
 		
 		if(valor == "."){
 			screen.innerText = "0";
 			screen.innerText += valor;
-			temPonto = true;
 		}else{
 			screen.innerText = "";
 			screen.innerText += valor;
@@ -49,23 +50,14 @@ const apresentar = function(valor){
 		if(valor == "." && screen.innerText == "0"){
 				screen.innerText = "0";
 				screen.innerText += valor;
-				temPonto = true;
-		// }else if(temPonto && valor == "."){
-		// 	return;
 		}else if(screen.innerText == "0"){
 			screen.innerText = "";
 			screen.innerText += valor;
 		}else{
-			if(valor == "." && screen.innerText != "0" && !temPonto){
-				screen.innerText += valor;
-				temPonto = true;
-			}else if(temPonto && valor == "."){
-				return;
-			}else{
-				screen.innerText += valor;
-			}
+			screen.innerText += valor;
 		}
 	}
+	
 }
 
 const calcular = function(valorAntigo, operador, valorAtual){
