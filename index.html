@@ -7,7 +7,7 @@
 
     <title>KalcWeb</title>
     <meta name="description" content="Bela Calculadora Web. Criada por https://dribbble.com/supahfunk e adaptada por https://github.com/joseolinda">
-    <meta name="author" content="@joseolinda">
+    <meta name="author" content="@pchenrique">
 
     <link rel="stylesheet" href="css/kalcWeb.css?v=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
@@ -29,16 +29,16 @@
                 <button data-val="3" onclick="pegarValor(this.innerText)">3</button>
                 <button data-val="2" onclick="pegarValor(this.innerText)">2</button>
                 <button data-val="1" onclick="pegarValor(this.innerText)">1</button>
-                <button data-val="clear" onclick="(apagar())">C</button>
+                <button data-val="clear" onclick="(reset())">C</button>
                 <button data-val="." onclick="pegarValor(this.innerText)">.</button>
                 <button data-val="0" href="0" onclick="pegarValor(this.innerText)">0</button>
             </div>
             <div class="operators">
-                <button data-val="/" onclick="operador(this.innerText)">÷</button>
-                <button data-val="*" onclick="operador(this.innerText)">x</button>
+                <button data-val="÷" onclick="operador(this.innerText)">÷</button>
+                <button data-val="x" onclick="operador(this.innerText)">x</button>
                 <button data-val="-" onclick="operador(this.innerText)">-</button>
                 <button data-val="+" onclick="operador(this.innerText)">+</button>
-                <button data-val="=" onclick="operador(this.innerText)">=</button>
+                <button data-val="=" onclick="igual()">=</button>
             </div>
         </div>
     </div>
