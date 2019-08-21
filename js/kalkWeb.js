@@ -15,6 +15,41 @@ var atual = 0;
 
 const screen = document.querySelector(".screen");
 
+let docBody = document.getElementsByTagName("body")[0];
+	docBody.onkeydown = (e)=>{
+		if(!e.metaKey){
+			e.preventDefault();
+		}
+
+		if(e.key == "1"){
+			apresentar("1");	
+		}else if(e.key == "2"){
+			apresentar("2");
+		}else if(e.key == "3"){
+			apresentar("3");
+		}else if(e.key == "4"){
+			apresentar("4");
+		}else if(e.key == "5"){
+			apresentar("5");
+		}else if(e.key == "6"){
+			apresentar("6");
+		}else if(e.key == "7"){
+			apresentar("7");
+		}else if(e.key == "8"){
+			apresentar("8");
+		}else if(e.key == "9"){
+			apresentar("9");
+		}else if(e.key == "0"){
+			apresentar("0");
+		}else if(e.key == "."){
+			apresentar(".");
+		}else if(e.code == "Delete"){
+			reset();
+		}else if(e.key == "+"){
+			operador("+");
+		}
+	}	
+
 const pegarValor = function(valor){
  	apresentar(valor);
 } 
