@@ -47,6 +47,16 @@ let docBody = document.getElementsByTagName("body")[0];
 			reset();
 		}else if(e.key == "+"){
 			operador("+");
+		}else if(e.code == "Minus"){
+			operador("-");
+		}else if(e.key == "/"){
+			operador("÷");
+		}else if(e.key == "*"){
+			operador("x");
+		}else if(e.key == "="){
+			igual();
+		}else if(e.key == "Backspace"){
+			apagar();
 		}
 	}	
 
@@ -63,6 +73,12 @@ const reset = function(){
 	operadorAntigo = "";
 	operadorAtual = "";
 	console.clear();
+}
+
+const apagar = function(){
+	// var string = screen.value;
+	// var string1 = string.replace(/.$/, "");
+	// screen.value = string1;
 }
 
 const apresentar = function(valor){
